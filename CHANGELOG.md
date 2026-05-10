@@ -1,6 +1,8 @@
 # Changelog
 
 ## master - CURRENT
+
+## 3.25.2 - 10/05/2026
 ### Added
 * The `googleclouddns` provider now works on public zones only by default
 
