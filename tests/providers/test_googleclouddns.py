@@ -33,4 +33,7 @@ class TestGoogleCloudDns(IntegrationTestsV2):
     #
     # Override _test_options to call env_auth_options and then import auth config from env variables
     def _test_parameters_overrides(self):
-        return {"auth_service_account_info": f"base64::{SERVICE_ACCOUNT_INFO_BASE64}"}
+        return {
+            "auth_service_account_info": f"base64::{SERVICE_ACCOUNT_INFO_BASE64}",
+            "private_zone": False,
+        }

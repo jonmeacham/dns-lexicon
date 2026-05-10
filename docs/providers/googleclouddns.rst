@@ -5,6 +5,10 @@ googleclouddns
         or the base64 encoded content of this file prefixed by 'base64::'
         (eg. base64::eyjhbgcioyj...)
 
+    * ``private_zone`` 
+        indicates what kind of hosted zone to use: if set, use 
+        only private zones, otherwise use only public zones.
+
 
 .. note::
    
