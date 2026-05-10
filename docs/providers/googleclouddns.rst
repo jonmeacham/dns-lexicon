@@ -6,7 +6,7 @@ googleclouddns
         (eg. base64::eyjhbgcioyj...)
 
     * ``private_zone`` 
-        indicates what kind of hosted zone to use: if set, use 
+        indicates what kind of hosted zone to use: if set, use
         only private zones, otherwise use only public zones.
 
 

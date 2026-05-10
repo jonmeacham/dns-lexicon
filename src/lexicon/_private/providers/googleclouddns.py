@@ -74,7 +74,7 @@ class Provider(BaseProvider):
             "--private-zone",
             action="store_true",
             help="""
-        indicates what kind of hosted zone to use: if set, use 
+        indicates what kind of hosted zone to use: if set, use
         only private zones, otherwise use only public zones.""",
         )
 
