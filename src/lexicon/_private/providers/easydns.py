@@ -38,7 +38,7 @@ class Provider(BaseProvider):
         payload = self._get(f"/domain/{self.domain}")
         if "error" in payload:
             raise AuthenticationError(
-                f'{payload["error"]["code"]} {payload["error"]["message"]}'
+                f"{payload['error']['code']} {payload['error']['message']}"
             )
 
         if payload["data"]["exists"] == "N":

@@ -14,7 +14,11 @@ from integration_tests import IntegrationTestsV2
 #   in particular concerning the instrumention of recent versions of urrlib3.
 @pytest.mark.skipif(
     # fmt: off
-    sys.version_info >= (3, 12,),
+    sys.version_info
+    >= (
+        3,
+        12,
+    ),
     # fmt: on
     reason="Tests for valuedomain are not supported on Python 3.12+.",
 )

@@ -6,7 +6,6 @@ _ZONES_API = "https://api.hosting.ionos.com/dns/v1/zones"
 
 
 class Provider(BaseProvider):
-
     @staticmethod
     def get_nameservers():
         return ["ui-dns.com", "ui-dns.org", "ui-dns.de", "ui-dns.biz"]

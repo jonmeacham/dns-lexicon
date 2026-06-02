@@ -69,7 +69,7 @@ class Provider(BaseProvider):
             params=query_params,
             data=json.dumps(data),
             headers={
-                "Authorization": f'Bearer {self._get_provider_option("auth_token")}',
+                "Authorization": f"Bearer {self._get_provider_option('auth_token')}",
                 "Content-Type": "application/json",
             },
         )

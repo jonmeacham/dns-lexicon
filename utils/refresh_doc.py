@@ -50,7 +50,7 @@ List of options
 
     with open(join(_DOCS, "providers_options.rst"), "w") as f:
         f.write("\n".join(output))
-        
+
     _refresh_pypi_readme()
 
 
@@ -140,18 +140,20 @@ def _cleanup_description(description: str):
 def _refresh_pypi_readme():
     with open(join(_ROOT, "README.rst")) as f:
         readme_lines = f.readlines()
-        
+
     begin_idx = readme_lines.index(".. raw:: html\n")
     end_idx = readme_lines.index("    </h1>\n")
-    
+
     readme_lines = (
-        readme_lines[: begin_idx]
-        + [".. image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg\n"]
+        readme_lines[:begin_idx]
+        + [
+            ".. image:: https://raw.githubusercontent.com/dns-lexicon/dns-lexicon/main/docs/images/logo_named.svg\n"
+        ]
         + ["   :alt: Lexicon"]
         + ["\n"]
-        + readme_lines[end_idx + 1:]
+        + readme_lines[end_idx + 1 :]
     )
-    
+
     with open(join(_ROOT, "pypi_readme.rst"), "w") as file_h:
         file_h.writelines(readme_lines)
 

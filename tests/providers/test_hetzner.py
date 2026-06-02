@@ -1,6 +1,5 @@
-from unittest import TestCase
-
 """Integration tests for Hetzner"""
+from unittest import TestCase
 
 import pytest
 from integration_tests import IntegrationTestsV2

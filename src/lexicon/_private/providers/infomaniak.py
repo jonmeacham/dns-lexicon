@@ -65,9 +65,11 @@ class Provider(BaseProvider):
 
         records = list(
             filter(
-                lambda x: x["content"] == content
-                and x["type"] == rtype
-                and self._relative_name(x["name"]) == self._relative_name(name),
+                lambda x: (
+                    x["content"] == content
+                    and x["type"] == rtype
+                    and self._relative_name(x["name"]) == self._relative_name(name)
+                ),
                 self.list_records(rtype, name, content),
             )
         )

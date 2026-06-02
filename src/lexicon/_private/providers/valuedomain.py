@@ -387,7 +387,9 @@ class Provider(BaseProvider):
                     (
                         int(ttl_option)
                         if ttl_option is not None and int(ttl_option) > 0
-                        else DEFAULT_TTL if ttl_option is not None else domain_data.ttl
+                        else DEFAULT_TTL
+                        if ttl_option is not None
+                        else domain_data.ttl
                     ),
                 ),
             )
@@ -471,7 +473,9 @@ class Provider(BaseProvider):
                     (
                         ttl_option
                         if ttl_option is not None and ttl_option > 0
-                        else DEFAULT_TTL if ttl_option is not None else domain_data.ttl
+                        else DEFAULT_TTL
+                        if ttl_option is not None
+                        else domain_data.ttl
                     ),
                 ),
             )
@@ -530,9 +534,9 @@ class Provider(BaseProvider):
             self.authenticate()
 
         assert self.caller is not None, "HTTP caller not defined"
-        assert self.domain_id is not None or len(
-            self.domain_id == 0
-        ), "Domain name not retriebed"
+        assert self.domain_id is not None or len(self.domain_id == 0), (
+            "Domain name not retriebed"
+        )
 
     def _create_record_data(self, rtype: str, name: str, content: str) -> RecordData:
         return RecordData(rtype.lower(), self._relative_name(name).lower(), content)

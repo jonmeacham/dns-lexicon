@@ -68,21 +68,17 @@ full = [
 
 [dependency-groups]
 dev = [
-    "esbonio",
     "packaging",
     "pytest",
     "pytest-cov",
     "pytest-xdist",
     "vcrpy",
-    "flake8",
-    "flake8-pyproject",
-    "isort",
-    "black",
     "mypy[reports]",
     "toml",
     "types-PyYAML",
     "types-requests",
     "types-toml",
+    "ruff",
 ]
 doc = ["sphinx", "sphinx-mdinclude", "piccolo-theme"]
 
@@ -125,13 +121,6 @@ warn_unused_ignores = true
 [[tool.mypy.overrides]]
 module = ["requests_unixsocket.*"]
 follow_untyped_imports = true
-
-[tool.isort]
-profile = "black"
-
-[tool.flake8]
-max-line-length = 88
-extend-ignore = ["E203", "E501"]
 
 [tool.tox]
 envlist = ["cover", "lint", "mypy"]
@@ -180,7 +169,7 @@ commands = [
 
 # Lint env will check for code quality and errors, and fails if it does not match the minimal requirements.
 [tool.tox.env.lint]
-commands = [["flake8", "src", "tests"]]
+commands = [["ruff", "check", "src", "tests"]]
 
 # Mypy env will check for types in the Lexicon codebase.
 [tool.tox.env.mypy]

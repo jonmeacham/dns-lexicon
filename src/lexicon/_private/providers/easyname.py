@@ -80,9 +80,9 @@ class Provider(BaseProvider):
         )
         self._log("Login", login_response)
         json_response = json.loads(login_response.content)
-        assert (
-            login_response.status_code == 200
-        ), "Could not login due to a network error."
+        assert login_response.status_code == 200, (
+            "Could not login due to a network error."
+        )
 
         assert json_response["redirectUrl"] == self.URLS["dashboard"], (
             "Easyname login failed, bad EASYNAME_USER or EASYNAME_PASS.%s"
@@ -412,9 +412,9 @@ class Provider(BaseProvider):
         # We are logged in, so get the domain list
         zones_response = self.session.get(self.URLS["domain_list"])
         self._log("Zone", zones_response)
-        assert (
-            zones_response.status_code == 200
-        ), "Could not retrieve domain list due to a network error."
+        assert zones_response.status_code == 200, (
+            "Could not retrieve domain list due to a network error."
+        )
 
         html = BeautifulSoup(zones_response.content, "html.parser")
         self._log("Zone", html)
@@ -455,8 +455,7 @@ class Provider(BaseProvider):
             return domain_id
         except Exception as error:
             errmsg = (
-                "Cannot get the domain id even though the domain seems "
-                "to exist (%s).",
+                "Cannot get the domain id even though the domain seems to exist (%s).",
                 error,
             )
             LOGGER.warning(errmsg)

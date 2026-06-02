@@ -68,9 +68,7 @@ class TestNamecomProvider(IntegrationTestsV2):
         provider.authenticate()
 
         record_id = provider.create_record("MX", "mx.test1", self.domain)
-        assert (
-            provider._get_raw_record(record_id)["priority"] == priority
-        )  # pylint: disable=protected-access
+        assert provider._get_raw_record(record_id)["priority"] == priority  # pylint: disable=protected-access
 
     @vcr_integration_test
     def test_provider_when_calling_create_record_for_MX_with_no_priority(
@@ -78,9 +76,7 @@ class TestNamecomProvider(IntegrationTestsV2):
     ):  # pylint: disable=invalid-name
         provider = self._construct_authenticated_provider()
         record_id = provider.create_record("MX", "mx.test2", self.domain)
-        assert "priority" not in provider._get_raw_record(
-            record_id
-        )  # pylint: disable=protected-access
+        assert "priority" not in provider._get_raw_record(record_id)  # pylint: disable=protected-access
 
     @vcr_integration_test
     def test_provider_when_calling_create_record_should_fail_on_http_error(self):

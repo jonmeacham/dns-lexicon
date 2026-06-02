@@ -51,24 +51,23 @@ class Provider(BaseProvider):
         """
         parser.add_argument(
             "--auth-client-id",
-            help="specify the client ID (aka application ID) "
-            "of the App registration",
+            help="specify the client ID (aka application ID) of the App registration",
         )
         parser.add_argument(
             "--auth-client-secret",
-            help="specify the client secret of the App " "registration",
+            help="specify the client secret of the App registration",
         )
         parser.add_argument(
             "--auth-tenant-id",
-            help="specify the tenant ID (aka directory ID) of " "the App registration",
+            help="specify the tenant ID (aka directory ID) of the App registration",
         )
         parser.add_argument(
             "--auth-subscription-id",
-            help="specify the subscription ID attached " "to the resource group",
+            help="specify the subscription ID attached to the resource group",
         )
         parser.add_argument(
             "--resource-group",
-            help="specify the resource group hosting the DNS " "zone to edit",
+            help="specify the resource group hosting the DNS zone to edit",
         )
 
     def __init__(self, config):

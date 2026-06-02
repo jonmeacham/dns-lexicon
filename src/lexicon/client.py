@@ -119,7 +119,8 @@ class Client(AbstractContextManager):
                 )
             except TypeError:
                 domain_extractor = tldextract.TLDExtract(
-                    cache_file=_resolve_tldextract_cache_path(), include_psl_private_domains=True  # type: ignore
+                    cache_file=_resolve_tldextract_cache_path(),
+                    include_psl_private_domains=True,  # type: ignore
                 )
             domain_parts = domain_extractor(domain)
             runtime_config["domain"] = f"{domain_parts.domain}.{domain_parts.suffix}"

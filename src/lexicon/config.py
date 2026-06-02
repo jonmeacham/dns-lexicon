@@ -383,8 +383,7 @@ class ConfigResolver(object):
         """Configure a source that consumes the dict that where used on Lexicon 2.x"""
         warnings.warn(
             DeprecationWarning(
-                "Legacy configuration object has been used "
-                "to load the ConfigResolver."
+                "Legacy configuration object has been used to load the ConfigResolver."
             )
         )
         return self.with_config_source(LegacyDictConfigSource(legacy_dict_object))

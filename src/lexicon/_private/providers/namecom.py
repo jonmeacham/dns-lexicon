@@ -20,9 +20,7 @@ DUPLICATE_ERROR = {
 }
 
 
-class NamecomLoader(
-    object
-):  # pylint: disable=useless-object-inheritance,too-few-public-methods
+class NamecomLoader(object):  # pylint: disable=useless-object-inheritance,too-few-public-methods
     """Loader that handles pagination for the Name.com provider."""
 
     def __init__(self, get, url, data_key, next_page=1):

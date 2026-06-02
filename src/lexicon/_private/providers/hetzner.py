@@ -86,7 +86,6 @@ class Provider(BaseProvider):
 
 
 class HetznerDns(BaseProvider):
-
     @staticmethod
     def get_nameservers() -> List[str]:
         return ["ns.hetzner.com"]
