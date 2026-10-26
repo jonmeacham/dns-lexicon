@@ -78,7 +78,7 @@ dev = [
     "types-PyYAML",
     "types-requests",
     "types-toml",
-    "ruff",
+    "ruff < 0.16",
 ]
 doc = ["sphinx", "sphinx-mdinclude", "piccolo-theme"]
 
